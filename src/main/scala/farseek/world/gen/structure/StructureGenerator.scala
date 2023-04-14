@@ -2,7 +2,6 @@ package farseek.world.gen.structure
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent
 import farseek.util.ImplicitConversions._
-import farseek.util.Reflection._
 import farseek.util._
 import farseek.world._
 import farseek.world.gen._
@@ -37,18 +36,13 @@ abstract class StructureGenerator[T <: Structure[_]](
 
   @SubscribeEvent def onChunkGeneration(event: ReplaceBiomeBlocks) {
     // Fix missing/invalid pieces from deprecated ReplaceBiomeBlocks constructors
-    val world =
-      if (event.world != null) event.world
-      else
-        chunkGeneratorWorldClassFields(event.chunkProvider.getClass)
-          .value[World](event.chunkProvider)
     val datas =
       if (
         event.metaArray != null && event.metaArray.size == event.blockArray.size
       ) event.metaArray
       else null
     onChunkGeneration(
-      world.asInstanceOf[WorldServer],
+      event.world.asInstanceOf[WorldServer],
       event.chunkProvider,
       event.chunkX,
       event.chunkZ,

@@ -3,7 +3,6 @@ package farseek.world
 import cpw.mods.fml.common.IWorldGenerator
 import cpw.mods.fml.common.registry.GameRegistry
 import farseek.tfc
-import farseek.util.Reflection._
 import farseek.util.{XYZ, _}
 import farseek.world.Direction._
 import java.lang.reflect.Field
@@ -25,13 +24,6 @@ package object gen {
   val ChunkSize = 16
   val ChunkArea = ChunkSize * ChunkSize
   val iChunkMax = ChunkSize - 1
-
-  /** Maps [[ChunkGenerator]]s with the first field of [[World]] type or subtype
-    * declared in their class.
-    */
-  val chunkGeneratorWorldClassFields = mutable
-    .Map[Class[_ <: ChunkGenerator], Field]()
-    .withDefault(classFields[World](_).head)
 
   var populatingExtras = false
 

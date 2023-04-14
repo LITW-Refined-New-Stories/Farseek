@@ -1,7 +1,6 @@
 package farseek.world.gen.structure
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent
-import farseek.util.Reflection._
 import farseek.util._
 import net.minecraft.world._
 import net.minecraft.world.gen.structure.MapGenStructure
@@ -32,10 +31,6 @@ class StructureGenerationChunkProvider(val worldProvider: WorldProvider)
   )
 
   val generator = worldProvider.createChunkGenerator
-
-  classFieldValues[MapGenStructure](generator)
-    .foreach(_.range = -1) // Disable structure generators
-  EVENT_BUS.register(this)
 
   def generateChunk(xChunk: Int, zChunk: Int) = {
     val chunk = generator.provideChunk(xChunk, zChunk)
