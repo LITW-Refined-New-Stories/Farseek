@@ -3,7 +3,6 @@ package farseek.util
 import farseek.block.{BlockAndData, _}
 import farseek.config._
 import farseek.world._
-import farseek.world.gen.{Bounded, BoundingBox}
 import net.minecraft.block.Block
 import net.minecraft.block.Block._
 import net.minecraft.entity.Entity
@@ -91,8 +90,6 @@ object ImplicitConversions {
   // -----------------------------------------------------------------------------------------------------------------
   // Bounding boxes
   // -----------------------------------------------------------------------------------------------------------------
-  implicit def boundedBoundingBox(bounded: Bounded): BoundingBox =
-    bounded.boundingBox
 
   implicit def entityBoundingBox(entity: Entity): AxisAlignedBB =
     entity.getBoundingBox
