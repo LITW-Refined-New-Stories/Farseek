@@ -1,6 +1,8 @@
 # Farsee
 
-**__D I S C L A M E R :__** *This fork adds modiciations to depcreate the mod and make it compatible with JAVA 12+! That means that with this fork the mod will not longer generate new rivers but keeps the existing ones to not destroy your existing work. This mod is intented to be used explicitely with my [Streams fork](https://github.com/Pilzinsel64/Streams)!*
+***A R C H I V E D :*** This mod is not in use on our servers anymore. Existing worlds has been fixed with a custom made tool.
+
+***_D I S C L A M E R :** This fork adds modiciations to depcreate the mod and make it compatible with JAVA 12+! That means that with this fork the mod will not longer generate new rivers but keeps the existing ones to not destroy your existing work. This mod is intented to be used explicitely with my [Streams fork](https://github.com/Pilzinsel64/Streams)!*
 
 - This mod has updated to the latest GTNH build script
 - All world + structure generation features are probably borken now! *(Streams Mod has been updated already)*
